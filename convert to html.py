@@ -42,6 +42,8 @@ def getFileName():
             print("new file to be created: ", newFile)
             newFile = open(newFile, 'wt')
             with open(i) as f:
+                newFile.write(header)
+                newFile.write(sidebar)
                 php=False
                 for line in f:
                     
@@ -66,6 +68,7 @@ def getFileName():
                     else:
                         line = line.replace(".php",".html")
                         newFile.write(str(line))
+                newFile.write(footer)
                 newFile.close()
 
 def processLine():
