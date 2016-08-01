@@ -13,6 +13,7 @@ def getHeader():
     if "header.php" in os.listdir():
         header = open("header.php",'rt')
         header= header.read()
+        header = header.replace(".php",".html")
         return header
 def getSidebar():
     if "sidebar.php" in os.listdir():
@@ -20,6 +21,7 @@ def getSidebar():
         sidebar= sidebar.read()
         sidebar = sidebar.replace("<!DOCTYPE html>","")
         sidebar = sidebar.replace("<link href=""\"style.css""\" rel=""\"stylesheet""\" type=""\"text/css""\">","")
+        sidebar = sidebar.replace(".php",".html")
         return sidebar
 def getFooter():
     if "footer.php" in os.listdir():
@@ -27,6 +29,7 @@ def getFooter():
         footer= footer.read()
         footer = footer.replace("<!DOCTYPE html>","")
         footer = footer.replace("<link href=""\"style.css""\" rel=""\"stylesheet""\" type=""\"text/css""\">","")
+        footer = footer.replace(".php",".html")
         return footer
 def getFileName():
     count=0
@@ -66,6 +69,7 @@ def getFileName():
                     if php == True: #ignore php
                         pass
                     else:
+                        
                         line = line.replace(".php",".html")
                         newFile.write(str(line))
                 newFile.write(footer)
