@@ -1,0 +1,270 @@
+/*
+
+  ,ad8888ba,                                           88888888ba                                                             
+ d8"'    `"8b                                          88      "8b                                                            
+d8'                                                    88      ,8P                                                            
+88             8b,dPPYba,   ,adPPYba,   ,adPPYb,d8     88aaaaaa8P'   ,adPPYba,   8b      db      d8   ,adPPYba,  8b,dPPYba,   
+88      88888  88P'   "Y8  a8P_____88  a8"    `Y88     88""""""8b,  a8"     "8a  `8b    d88b    d8'  a8P_____88  88P'   `"8a  
+Y8,        88  88          8PP"""""""  8b       88     88      `8b  8b       d8   `8b  d8'`8b  d8'   8PP"""""""  88       88  
+ Y8a.    .a88  88          "8b,   ,aa  "8a,   ,d88     88      a8P  "8a,   ,a8"    `8bd8'  `8bd8'    "8b,   ,aa  88       88  
+  `"Y88888P"   88           `"Ybbd8"'   `"YbbdP"Y8     88888888P"    `"YbbdP"'       YP      YP       `"Ybbd8"'  88       88  
+                                        aa,    ,88                                                                            
+                                         "Y8bbdP" 
+
+
+Sets up fonts*/
+@font-face {
+	font-family: perpet;
+	src: url(fonts/perpetua.eot); /* EOT file for IE */
+}
+@font-face {
+	font-family: perpet;
+	src: url(fonts/perpetua.ttf); /* TTF file for CSS3 browsers */
+}
+#change {
+	font-family: perpet;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td,hr {
+	margin: 0;
+	padding: 0;
+	font-family: perpet;
+	color: #3c3c3c;
+}
+
+s1 {	/*used for the side title*/
+	padding-left: 5px;
+	padding-bottom: 5px;
+	font-family: perpet;
+	text-emphasis: none;
+	font-size: 2vw;
+	color: #3c3c3c;
+}
+h6 {
+	color: #3c3c3c;
+	font-size: 1vw;
+}
+h5 {
+	color: #3c3c3c;
+	font-size: 1vw;
+}
+h4 {
+	color: #3c3c3c;
+	font-size: 1.4vw;
+}
+h3 {
+	color: #3c3c3c;
+	font-size: 1.7vw;
+}
+h2 {
+	color: #3c3c3c;
+	font-size: 2.0vw;
+}
+h1 {
+	color: #3c3c3c;
+	font-size: 2.3vw;
+}
+p {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #3c3c3c;
+	font-family: perpet;
+	font-size: 1.6vw;
+}
+img {
+	width: 100%;
+}
+img.resize{
+   max-width:90%;
+   max-height:90%;
+   padding-top: 5%;
+   padding-left: 5%;
+
+}
+#content {
+	margin-left: 25%; /*how far logo is from side*/
+	width: 65%;
+	vertical-align: top;
+	font-family: Lato;
+	font-size: 3vw;
+	min-height: 600px;
+	position: relative;
+	background-size: contain;
+	background-image: url(images/DennyLogo.png);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+/* ~~~~~~~~~~~~~~~~~ main navigation BOX ~~~~~~~~~~~~~~~ */
+.menu {
+	margin-left: 0;
+	margin-right: 10%;
+	min-height: 200%;
+	vertical-align: bottom;
+	padding-left: 25%;/*how far logo is from side*/
+	padding-top: 3%;
+	padding-bottom: 1%;
+	background-image: url(images/UA_Menu.png);
+	background-repeat: no-repeat;
+	background-size: 18%;
+	background-position: 7%;
+
+
+}
+nav ol { /* for the overall list on nav bar */
+	list-style: none; /* this removes the list marker */
+	font-family: Lato;
+	white-space: nowrap;
+	border-bottom: solid #3c3c3c 2px;
+	width: 100%;
+	vertical-align: text-bottom;
+}
+/*---------------- Menu Format -----------------*/
+/*--Top Level --*/
+.menu a {  /*  entrys  on the top bar */
+	text-decoration: none;
+	font-size: 1.7vw;
+	color: #3c3c3c;
+}
+.menu a:hover {  /* entrys  on the top bar hovered */
+	text-decoration: none;
+	font-size: 1.7vw;
+	background-color: #3c3c3c;
+	color: white;
+	position: relative;
+	margin: 0 -3%;
+	padding:0 3%;
+}
+.menu > ol > li { /* for each item entry listed*/
+	display: inline-block;
+	position: relative;
+	padding-right: 20px;
+}
+
+.arrow { /*arrow on the main nav bar*/
+	font-size: .7vw;
+}
+/*-- Bottom Level --*/
+.menu li:hover .sub-menu {
+	opacity: 1;
+	z-index: 1;
+	color: white;
+	position: absolute;
+
+}
+/* overall sub-menu box */
+.sub-menu { 
+	padding-left: 10%;
+	padding-right: 25%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	box-shadow: 0px 3px 4px rgba(0,0,0,2);
+	background-color: white;
+	list-style: none;
+}
+/* when sub menu entry is hovered */
+.sub-menu li a:hover, .sub-menu .current-item a { 
+	opacity: 1;
+	z-index: 2;
+	font-family: perpet;
+	text-decoration: none;
+	color: white;
+	background-color: #3c3c3c;
+	transition-delay: 0s; /* react immediately on hover */
+}
+/*---------------HEADER-----------------------------------------------*/
+#header {
+	font-family: perpet;
+	background-color: #3c3c3c;
+	padding: 1.5%;
+	background-repeat: no-repeat;
+	background-size: 4%;
+	/*background-image: url(images/square.jpg);*/
+	color: white;
+	background-position: 5%;
+	padding-left: 5%;
+	font-size: 3vw;
+	text-align: left;
+
+}
+/*---------------SIDE BAR-----------------------------------------------*/
+#sidebar {
+	margin-left: 5%;
+	width: 16%;
+	float: left;
+	background-color: #eeeded;
+	font-size: 2.5vw;
+	white-space: nowrap;
+	padding-bottom: 0%;
+	margin-bottom: 1%;
+}
+hr.sideStyle {
+	margin-left:3%;
+	width: 90%;
+	margin-top:2%;
+    border: none;
+    border-top:0.15vw solid #a51e36;
+    margin-bottom: 1%;
+    color: #a51e36;
+    padding-top: 0;
+    text-align: center;
+    position: relative;
+	overflow:visible; /*fixes for IE*/
+
+}
+/* for the links listed */
+.side_style:link {    	
+	padding-left: 4%;
+	margin-left: 4%;
+	padding-right: 5%;
+	font-size: 2.5vw;
+	font-family: perpet;
+	text-decoration: none;
+	color: #3c3c3c;
+	z-index: 10;
+}
+.side_style:hover {
+	z-index: 10;
+	padding-left: 2%;
+	margin-left: 7%;
+	padding-right: 3%;
+	font-size: 2.5vw;
+	font-family: perpet;
+	text-decoration: none;
+	color: white;
+	background-color: #3c3c3c;
+}
+/*---------------FOOTERS-----------------------------------------------*/
+#footer1 { /*	Top Bar	*/
+	clear: both;
+	padding-right: 15%;
+	padding-left: 5%;
+	padding-bottom: 1%;
+	z-index: -10;
+	color: white;
+	font-size: .7vw;
+	font-family: perpet;
+	background-color: #3c3c3c;
+		background-image: url(images/WhiteUATag.png);
+
+	background-position: 85%;
+	background-repeat: no-repeat;
+	position: inherit;
+	background-size: 15%;
+}
+#footer2 { /*	bottom crimson bar	*/
+	clear: both;
+	padding: .5%;
+	background-color: #a51e36;
+	color: white;
+	text-align: left;
+	padding-left: 5%;
+	font-size: 1.1vw;
+	bottom: 0px;
+}
