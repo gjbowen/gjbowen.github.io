@@ -1,8 +1,6 @@
 ######### MAIN DEFAULTS #######################################
 DirectoryIndex index.html index.htm index.php
 
-############ Process 404 error #################################
-ErrorDocument 404 https://bama.ua.edu/~gjbowen/404.php
 
 ############ Redirect to https #################################
 RewriteEngine On
